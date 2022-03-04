@@ -74,7 +74,7 @@ namespace Matrizen
                         }
                         inputMatrix[x][y] = inputMatrix[y][x] = float.Parse(b.Text);
 
-                        SetPotencyMatrixView(ComputePotencyMatrix(inputMatrix));
+                        SetPotencyMatrixView(inputMatrix.Power(inputMatrix.Size));
                     };
                 buttons[x,y] = b;
 
@@ -108,20 +108,10 @@ namespace Matrizen
                 b.BorderStyle = BorderStyle.Fixed3D;
                 b.TextAlign = ContentAlignment.MiddleCenter;
                 b.Size = InputTable.Size / matrix.Size;
+                b.BackColor = matrix[x][y] > 0 ? Color.LightGray : Color.DimGray; 
 
                 potencyMatrix.Controls.Add(b,x,y);
             }
-        }
-
-        private MatrixBase ComputePotencyMatrix(MatrixBase matrix)
-        {
-            var res = new MatrixBase(matrix);
-
-            for (int i = 0; i < matrix.Size; i++)
-            {
-                res *= matrix;
-            }
-            return res;
         }
     }
 }

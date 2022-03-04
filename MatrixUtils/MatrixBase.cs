@@ -138,11 +138,21 @@ namespace MatrixUtils
         {
             var res = new MatrixBase(this);
 
-            for (int i = 0; i < power; i++)
+            for (int i = 1; i < power; i++)
             {
                 res *= this;
             }
             return res;
+        }
+
+        public override string ToString()
+        {
+            var s = new StringBuilder();
+            foreach (var row in Values)
+            {
+                s.AppendLine(string.Join(" : ", row));
+            }
+            return s.ToString();
         }
 
         #endregion
