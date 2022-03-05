@@ -22,6 +22,11 @@ namespace Matrizen
         {
             InitializeComponent();
 
+            Vector c = new Vector(1,1,1,1);
+
+            var g = c + 5; 
+
+
             inputMatrix = new MatrixBase(4);
             GenerateInputGrid(4);
 
