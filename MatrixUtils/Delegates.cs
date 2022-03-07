@@ -11,4 +11,11 @@ namespace MatrixUtils
     public delegate float Indexed2DComponentFunction(int row, int col, float value);
 
     public delegate float ComponentFunction(float value);
+
+    public delegate bool IndexedEquatableComponentFunction(int row, int col, float value);
+
+
+
+    public delegate void Index2DIterationDelegate(int row, int col);
+
 }

@@ -118,5 +118,10 @@ namespace Matrizen
                 potencyMatrix.Controls.Add(b,x,y);
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
